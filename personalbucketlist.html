@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bucket List 
+    </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 100px;
+            font-size: 50px;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 2500px;
+            margin: 0 auto;
+            background: white;
+            padding: 100px;
+            border-radius: 50px;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        ul {
+            list-style: none;
+            padding: 20px;
+        }
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #e3f2fd;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 50px;
+            font-size: 30px;
+            
+    
+        }
+        input[type="checkbox"] {
+            margin-right: 20px;
+            width: 30px;
+            height: 30px;
+   
+        }
+        .add-item {
+            margin: 70px;
+            
+            border: none;
+            border-radius: 5px;
+           
+            font-size: 24px;  
+            padding: 15px 30px; 
+             
+            
+             font-size: medium;
+            
+          
+        }
+        button {
+            padding: 20px;
+            background: #0288d1;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: medium;
+    
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My Bucket List</h1>
+        <ul id="bucket-list">
+            <li><input type="checkbox"> Travel to Tirupati</li>
+            <li><input type="checkbox"> Learn a new Programming Language</li>
+            <li><input type="checkbox"> Planting trees</li>
+            <li><input type="checkbox"> Write a book</li>
+            <li><input type="checkbox"> helping for socity</li>
+        </ul>
+        <div class="add-item">
+            <input type="text" id="new-item" placeholder="Add new item">
+            <button onclick="addItem()">Add</button>
+        </div>
+    </div>
+    <script>
+        function addItem() {
+            const newItemText = document.getElementById("new-item").value;
+            if (newItemText.trim() === "") return;
+            
+            const li = document.createElement("li");
+            li.innerHTML = `<input type="checkbox"> ${newItemText}`;
+            document.getElementById("bucket-list").appendChild(li);
+            document.getElementById("new-item").value = "";
+        }
+    </script>
+</body>
+</html>
